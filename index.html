@@ -110,7 +110,7 @@
   .hero-trust { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
   .founder-note { font-size: 15px; color: var(--muted); font-style: italic; }
   .hero-media { position: relative; }
-  .hero-media img, .hero-media video { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--r-card); border: 1px solid var(--line); background: #fff; }
+  .hero-media img, .hero-media video { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--r-card); border: 1px solid var(--line); background: #fff; }
   .hero-badge { position: absolute; left: -14px; bottom: 26px; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 13px 17px; box-shadow: 0 14px 34px rgba(28,28,26,.12); font-size: 14px; font-weight: 700; max-width: 200px; }
   /* ---- trust strip ---- */
   .strip { background: var(--sand); }
@@ -122,6 +122,10 @@
   .video-box { position: relative; overflow: hidden; max-width: 900px; margin-left: auto; margin-right: auto; background: #11231a; color: #e8e4d8; border-radius: var(--r-card); aspect-ratio: 4/3; }
   .video-box video { width: 100%; height: 100%; object-fit: cover; }
   .video-box__label { position: absolute; left: 18px; bottom: 18px; padding: 9px 13px; border-radius: 999px; background: rgba(17,35,26,.82); color: #fff; font-size: 13px; font-weight: 700; backdrop-filter: blur(8px); }
+  .installation-demo { margin-top: 34px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--r-card); background: #fff; box-shadow: 0 18px 50px rgba(28,28,26,.08); }
+  .installation-demo video { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; background: var(--cream); }
+  .installation-demo figcaption { display: flex; justify-content: space-between; gap: 24px; padding: 18px 22px; color: var(--muted); font-size: 14px; }
+  .installation-demo strong { color: var(--ink); }
   .play { width: 72px; height: 72px; border-radius: 50%; background: rgba(255,255,255,.14); border: 2px solid rgba(255,255,255,.5); display: grid; place-items: center; font-size: 26px; }
   .how-reference-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 24px; align-items: stretch; }
   .how-reference-card { margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: var(--r-card); background: var(--paper); }
@@ -250,6 +254,7 @@
     .how-reference-details { grid-template-rows: auto; }
   }
   @media (max-width: 560px) {
+    .installation-demo figcaption { flex-direction: column; gap: 6px; }
     .how-reference-details .how-reference-card { grid-template-columns: 1fr; }
     .how-reference-details figcaption { border-left: 0; border-top: 1px solid var(--line); }
   }
@@ -318,8 +323,8 @@
       <p class="founder-note">A mother-and-son shop. Invented, patented, and packed in the USA.</p>
     </div>
     <div class="hero-media">
-      <video autoplay muted loop playsinline preload="metadata" poster="eco-sorter-recycling.jpg" aria-label="AI-assisted test demonstration showing a bottle being sorted into the blue side of one divided trash can">
-        <source src="higgsfield-recycling-use.mp4" type="video/mp4">
+      <video autoplay muted loop playsinline preload="metadata" poster="eco-sorter-installation-poster.png" aria-label="Test animation showing both bags installed first, followed by placing, extending, and tightening the Eco-Sorter">
+        <source src="eco-sorter-installation.mp4" type="video/mp4">
       </video>
       <div class="hero-badge">Test preview. One can, two bags.</div>
     </div>
@@ -344,6 +349,12 @@
   <div class="wrap">
     <p class="eyebrow center">How it works</p>
     <h2 class="center">One can. Two bags. One adjustable divider.</h2>
+    <figure class="installation-demo">
+      <video autoplay muted loop playsinline preload="metadata" poster="eco-sorter-installation-poster.png" aria-label="Step-by-step Eco-Sorter installation animation">
+        <source src="eco-sorter-installation.mp4" type="video/mp4">
+      </video>
+      <figcaption><strong>Install in the right order</strong><span>Bag both sides, place on the rim, extend to fit, then tighten the round clasp.</span></figcaption>
+    </figure>
     <div class="how-reference-grid mt">
       <figure class="how-reference-card how-reference-main">
         <img src="eco-sorter-one-can.jpg" alt="The real Eco-Sorter installed across one gray trash can with two bags">
