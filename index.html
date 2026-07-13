@@ -123,6 +123,17 @@
   .video-box video { width: 100%; height: 100%; object-fit: cover; }
   .video-box__label { position: absolute; left: 18px; bottom: 18px; padding: 9px 13px; border-radius: 999px; background: rgba(17,35,26,.82); color: #fff; font-size: 13px; font-weight: 700; backdrop-filter: blur(8px); }
   .play { width: 72px; height: 72px; border-radius: 50%; background: rgba(255,255,255,.14); border: 2px solid rgba(255,255,255,.5); display: grid; place-items: center; font-size: 26px; }
+  .how-reference-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 24px; align-items: stretch; }
+  .how-reference-card { margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: var(--r-card); background: var(--paper); }
+  .how-reference-card img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; background: #fff; }
+  .how-reference-card figcaption { padding: 16px 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+  .how-reference-card figcaption strong { display: block; color: var(--ink); font-size: 17px; margin-bottom: 3px; }
+  .how-reference-main { display: grid; grid-template-rows: minmax(0,1fr) auto; }
+  .how-reference-main img { aspect-ratio: 4/3; object-fit: contain; padding: 18px; }
+  .how-reference-details { display: grid; grid-template-rows: 1fr 1fr; gap: 24px; }
+  .how-reference-details .how-reference-card { display: grid; grid-template-columns: .48fr .52fr; }
+  .how-reference-details img { aspect-ratio: 1/1; padding: 14px; }
+  .how-reference-details figcaption { border-top: 0; border-left: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; }
   /* ---- steps ---- */
   .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 26px; }
   .step { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-card); padding: 28px; }
@@ -131,6 +142,7 @@
   .prob { background: var(--sand); }
   .prob-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 34px; }
   .prob-card { border-radius: var(--r-card); overflow: hidden; border: 1px solid var(--line); background: var(--paper); }
+  .prob-card > img { width: 100%; aspect-ratio: 4/3; object-fit: contain; display: block; background: #fff; padding: 18px; }
   .ph { background: repeating-linear-gradient(135deg,#e7e0d2,#e7e0d2 12px,#ded6c6 12px,#ded6c6 24px); color: #7a7464; font-size: 14px; font-style: italic; aspect-ratio: 4/3; display: grid; place-items: center; text-align: center; padding: 22px; }
   .prob-card.win { border-color: var(--forest); box-shadow: 0 0 0 1.5px var(--forest); }
   .prob-body { padding: 22px; }
@@ -218,7 +230,7 @@
   .foot-bottom { margin-top: 34px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.12); font-size: 13px; color: #8c887d; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
   /* ---- responsive ---- */
   @media (max-width: 900px) {
-    .hero-grid, .founder-grid, .rev-grid, .faq-grid { grid-template-columns: 1fr; gap: 30px; }
+    .hero-grid, .founder-grid, .rev-grid, .faq-grid, .how-reference-grid { grid-template-columns: 1fr; gap: 30px; }
     .stats { grid-template-columns: repeat(2,1fr); gap: 22px; }
     .steps, .prob-grid, .prod-grid, .obj-grid, .cmp-grid { grid-template-columns: 1fr; }
     .nav { grid-template-columns: 1fr auto 1fr; gap: 10px; }
@@ -228,6 +240,11 @@
     .nav-right { gap: 0; }
     .guarantee { position: static; }
     .email form { flex-direction: column; }
+    .how-reference-details { grid-template-rows: auto; }
+  }
+  @media (max-width: 560px) {
+    .how-reference-details .how-reference-card { grid-template-columns: 1fr; }
+    .how-reference-details figcaption { border-left: 0; border-top: 1px solid var(--line); }
   }
 </style>
 </head>
@@ -294,10 +311,8 @@
       <p class="founder-note">A mother-and-son shop. Invented, patented, and packed in the USA.</p>
     </div>
     <div class="hero-media">
-      <video autoplay muted loop playsinline aria-label="The Eco-Sorter spanning one trash can to hold two bags side by side">
-        <source src="higgsfield-divider-demo.mp4" type="video/mp4">
-      </video>
-      <div class="hero-badge">Higgsfield concept · bags first, divider second.</div>
+      <img src="eco-sorter-recycling.jpg" alt="The real Eco-Sorter spanning one trash can and holding blue and white bags side by side">
+      <div class="hero-badge">One can. Two bags. The real Eco-Sorter.</div>
     </div>
   </div>
 </section>
@@ -311,19 +326,30 @@
       <div class="stat"><div class="n">4.9 ★</div><div class="l">63 reviews</div></div>
       <div class="stat"><div class="n">Made in USA</div><div class="l">from recycled plastic</div></div>
     </div>
-    <p class="cap">The original trash can divider · U.S. Patent No. [add patent #]</p>
+    <p class="cap">The original trash can divider · U.S. Patent No. 12,275,582</p>
   </div>
 </section>
 
-<!-- ============ VIDEO ============ -->
-<section class="section" id="how" data-screen-label="Video">
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section" id="how" data-screen-label="How it works">
   <div class="wrap">
+    <p class="eyebrow center">How it works</p>
     <h2 class="center">One can. Two bags. One adjustable divider.</h2>
-    <div class="video-box mt">
-      <video autoplay muted loop playsinline aria-label="Eco-Sorter product demonstration">
-        <source src="higgsfield-divider-demo.mp4" type="video/mp4">
-      </video>
-      <span class="video-box__label">Higgsfield concept · bags first, divider second</span>
+    <div class="how-reference-grid mt">
+      <figure class="how-reference-card how-reference-main">
+        <img src="eco-sorter-one-can.jpg" alt="The real Eco-Sorter installed across one gray trash can with two bags">
+        <figcaption><strong>The finished setup</strong>One ordinary trash can holds two liners side by side—without an invented inner divider or a second bin.</figcaption>
+      </figure>
+      <div class="how-reference-details">
+        <figure class="how-reference-card">
+          <img src="eco-sorter-product.jpg" alt="The real black Eco-Sorter adjustable trash can divider">
+          <figcaption><strong>One outer bar</strong>The single telescoping Eco-Sorter spans the rim and tightens at the round clasp.</figcaption>
+        </figure>
+        <figure class="how-reference-card">
+          <img src="eco-sorter-sizes.png" alt="The Eco-Sorter adjusted from 8 inches to 13 inches">
+          <figcaption><strong>Adjust it to fit</strong>Set the width for an 8–13 inch can, then tighten the clasp so the end clips grip the rim.</figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 </section>
@@ -351,7 +377,7 @@
         <div class="prob-body"><p class="eyebrow">The old way</p><div class="lab">A second can in the way</div><p>A separate bin or caddy eating floor and counter space. One more thing to bump into, empty, and clean.</p></div>
       </div>
       <div class="prob-card win">
-        <div class="ph">[ install photo: the divider splitting one kitchen can ]</div>
+        <img src="eco-sorter-one-can.jpg" alt="The real Eco-Sorter dividing one gray trash can into two bag compartments">
         <div class="prob-body"><p class="eyebrow">The divider</p><div class="lab">Across the can you own</div><p>The adjustable bar spans the rim and holds two bags side by side. Two streams, zero extra footprint.</p></div>
       </div>
     </div>
@@ -528,7 +554,7 @@
       <div class="foot-col"><h4>Learn</h4><a href="#how">How it works</a><a href="#faq">FAQ</a><a href="#story">Our story</a><a href="reviews.html">Reviews</a></div>
       <div class="foot-col"><h4>Help</h4><a href="#">Contact</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Track order</a></div>
     </div>
-    <div class="foot-bottom"><span>© 1ThingGreen. Made in the USA from recycled plastic.</span><span>U.S. Patent No. [add patent #]</span></div>
+    <div class="foot-bottom"><span>© 1ThingGreen. Made in the USA from recycled plastic.</span><span>U.S. Patent No. 12,275,582</span></div>
   </div>
 </footer>
 
