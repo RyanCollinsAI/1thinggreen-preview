@@ -134,6 +134,13 @@
   .how-reference-details .how-reference-card { display: grid; grid-template-columns: .48fr .52fr; }
   .how-reference-details img { aspect-ratio: 1/1; padding: 14px; }
   .how-reference-details figcaption { border-top: 0; border-left: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; }
+  .use-demo-intro { max-width: 680px; margin: 52px auto 0; text-align: center; }
+  .use-demo-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; margin-top: 24px; }
+  .use-demo-card { margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: var(--r-card); background: var(--paper); }
+  .use-demo-card video { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; background: #fff; }
+  .use-demo-card figcaption { padding: 18px 20px; color: var(--muted); font-size: 15px; }
+  .use-demo-card figcaption strong { display: block; color: var(--ink); font-size: 19px; margin-bottom: 4px; }
+  .demo-disclosure { margin: 14px 0 0; text-align: center; color: var(--muted); font-size: 12px; }
   /* ---- steps ---- */
   .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 26px; }
   .step { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-card); padding: 28px; }
@@ -232,7 +239,7 @@
   @media (max-width: 900px) {
     .hero-grid, .founder-grid, .rev-grid, .faq-grid, .how-reference-grid { grid-template-columns: 1fr; gap: 30px; }
     .stats { grid-template-columns: repeat(2,1fr); gap: 22px; }
-    .steps, .prob-grid, .prod-grid, .obj-grid, .cmp-grid { grid-template-columns: 1fr; }
+    .steps, .prob-grid, .prod-grid, .obj-grid, .cmp-grid, .use-demo-grid { grid-template-columns: 1fr; }
     .nav { grid-template-columns: 1fr auto 1fr; gap: 10px; }
     .nav-left, .nav-right .faq-link { display: none; }
     .mobile-menu-toggle { display: inline-grid; place-items: center; }
@@ -311,10 +318,10 @@
       <p class="founder-note">A mother-and-son shop. Invented, patented, and packed in the USA.</p>
     </div>
     <div class="hero-media">
-      <video autoplay muted loop playsinline preload="metadata" poster="eco-sorter-recycling.jpg" aria-label="Real product footage showing a bottle being sorted into the blue side of one divided trash can">
-        <source src="eco-sorter-real-use-loop.mp4" type="video/mp4">
+      <video autoplay muted loop playsinline preload="metadata" poster="eco-sorter-recycling.jpg" aria-label="AI-assisted test demonstration showing a bottle being sorted into the blue side of one divided trash can">
+        <source src="higgsfield-recycling-use.mp4" type="video/mp4">
       </video>
-      <div class="hero-badge">Real product footage. One can, two bags.</div>
+      <div class="hero-badge">Test preview. One can, two bags.</div>
     </div>
   </div>
 </section>
@@ -353,6 +360,26 @@
         </figure>
       </div>
     </div>
+    <div class="use-demo-intro">
+      <p class="eyebrow">See both sides in use</p>
+      <h3>Sort two everyday waste streams in one can.</h3>
+      <p>Use either side for the category that fits your routine. The same installed Eco-Sorter stays locked across the rim.</p>
+    </div>
+    <div class="use-demo-grid">
+      <figure class="use-demo-card">
+        <video autoplay muted loop playsinline preload="metadata" poster="eco-sorter-recycling.jpg" aria-label="AI-assisted test demonstration of a green bottle being placed in the blue recycling liner">
+          <source src="higgsfield-recycling-use.mp4" type="video/mp4">
+        </video>
+        <figcaption><strong>Recycling side</strong>A bottle goes into the blue liner while the divider stays fixed.</figcaption>
+      </figure>
+      <figure class="use-demo-card">
+        <video autoplay muted loop playsinline preload="metadata" poster="eco-sorter-one-can.jpg" aria-label="AI-assisted test demonstration of a paper towel being placed in the white trash liner">
+          <source src="higgsfield-trash-use.mp4" type="video/mp4">
+        </video>
+        <figcaption><strong>Trash side</strong>Everyday trash goes into the white liner without adding a second can.</figcaption>
+      </figure>
+    </div>
+    <p class="demo-disclosure">AI-assisted test visualization made from real Eco-Sorter product photography.</p>
   </div>
 </section>
 
