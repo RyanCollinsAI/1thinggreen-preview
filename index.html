@@ -106,6 +106,7 @@
   .hero { background: var(--cream); }
   .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 54px; align-items: center; }
   .hero-rating { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; font-weight: 600; font-size: 15px; }
+  .hero-rating .stars { font-size: 21px; letter-spacing: 3px; white-space: nowrap; }
   .hero h1 { margin-bottom: 18px; }
   .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin: 26px 0 22px; }
   .hero-trust { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
@@ -113,12 +114,16 @@
   .hero-media { position: relative; }
   .hero-media img, .hero-media video { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--r-card); border: 1px solid var(--line); background: #fff; }
   .hero-badge { position: absolute; left: -14px; bottom: 26px; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 13px 17px; box-shadow: 0 14px 34px rgba(28,28,26,.12); font-size: 14px; font-weight: 700; max-width: 200px; }
-  /* ---- trust strip ---- */
-  .strip { background: var(--sand); }
-  .stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; text-align: center; }
-  .stat .n { font-size: 30px; font-weight: 800; color: var(--forest); }
-  .stat .l { font-size: 15px; color: var(--muted); font-weight: 600; }
-  .strip .cap { text-align: center; margin-top: 26px; font-size: 13px; letter-spacing: .04em; color: var(--muted); text-transform: uppercase; font-weight: 600; }
+  /* ---- flowing review reel ---- */
+  .review-ticker { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--sand); }
+  .review-ticker-track { display: flex; width: max-content; animation: review-reel 48s linear infinite; will-change: transform; }
+  .review-ticker:hover .review-ticker-track { animation-play-state: paused; }
+  .review-ticker-group { display: flex; align-items: center; flex-shrink: 0; gap: 38px; padding: 17px 38px 17px 0; }
+  .review-ticker-item { display: inline-flex; align-items: center; gap: 10px; max-width: 560px; color: var(--ink); font-size: 15px; font-weight: 650; white-space: nowrap; }
+  .review-ticker-item .stars { font-size: 15px; letter-spacing: 2px; }
+  .review-ticker-item .who { color: var(--muted); font-size: 13px; font-weight: 700; }
+  .review-ticker-separator { color: var(--forest); font-size: 20px; }
+  @keyframes review-reel { to { transform: translateX(-50%); } }
   /* ---- sorting uses ---- */
   .uses { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-top: 34px; }
   .use { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-card); padding: 24px; }
@@ -248,7 +253,7 @@
   /* ---- responsive ---- */
   @media (max-width: 900px) {
     .hero-grid, .founder-grid, .rev-grid, .faq-grid, .how-reference-grid { grid-template-columns: 1fr; gap: 30px; }
-    .stats, .uses { grid-template-columns: repeat(2,1fr); gap: 22px; }
+    .uses { grid-template-columns: repeat(2,1fr); gap: 22px; }
     .steps, .prob-grid, .prod-grid, .obj-grid, .cmp-grid, .use-demo-grid { grid-template-columns: 1fr; }
     .nav { grid-template-columns: 1fr auto 1fr; gap: 10px; }
     .nav-left, .nav-right .faq-link { display: none; }
@@ -258,6 +263,11 @@
     .guarantee { position: static; }
     .email form { flex-direction: column; }
     .how-reference-details { grid-template-rows: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .review-ticker { overflow-x: auto; }
+    .review-ticker-track { animation: none; }
+    .review-ticker-group[aria-hidden="true"] { display: none; }
   }
   @media (max-width: 560px) {
     .installation-demo figcaption { flex-direction: column; gap: 6px; }
@@ -339,16 +349,50 @@
   </div>
 </section>
 
-<!-- ============ TRUST STRIP ============ -->
-<section class="strip section" data-screen-label="Trust strip">
-  <div class="wrap">
-    <div class="stats">
-      <div class="stat"><div class="n">Patented</div><div class="l">design</div></div>
-      <div class="stat"><div class="n">5,000+</div><div class="l">cans divided</div></div>
-      <div class="stat"><div class="n">4.8 ★</div><div class="l">60+ verified reviews</div></div>
-      <div class="stat"><div class="n">Made in USA</div><div class="l">from recycled plastic</div></div>
+<!-- ============ FLOWING REVIEW REEL ============ -->
+<section class="review-ticker" aria-label="Verified customer reviews" data-screen-label="Flowing reviews">
+  <div class="review-ticker-track">
+    <div class="review-ticker-group">
+      <span class="review-ticker-item"><span class="stars">★★★★★</span> “Exactly what I needed.” <span class="who">Ian · Verified buyer</span></span><span class="review-ticker-separator">•</span>
+      <span class="review-ticker-item"><span class="stars">★★★★★</span> “Very easy to use. So glad I found this!” <span class="who">Barbara · Verified buyer</span></span><span class="review-ticker-separator">•</span>
+      <span class="review-ticker-item"><span class="stars">★★★★★</span> “Simple, smart and space-saving.” <span class="who">Alison · Verified buyer</span></span><span class="review-ticker-separator">•</span>
+      <span class="review-ticker-item"><span class="stars">★★★★★</span> “Great and easy solution. Game changer!” <span class="who">Adi · Verified buyer</span></span><span class="review-ticker-separator">•</span>
+      <span class="review-ticker-item"><span class="stars">★★★★★</span> “Love having compost in the trash drawer and not on my counter.” <span class="who">Michelle · Verified buyer</span></span><span class="review-ticker-separator">•</span>
     </div>
-    <p class="cap">The original trash can divider · U.S. Patent No. 12,275,582</p>
+    <div class="review-ticker-group" aria-hidden="true">
+      <span class="review-ticker-item"><span class="stars">★★★★★</span> “Exactly what I needed.” <span class="who">Ian · Verified buyer</span></span><span class="review-ticker-separator">•</span>
+      <span class="review-ticker-item"><span class="stars">★★★★★</span> “Very easy to use. So glad I found this!” <span class="who">Barbara · Verified buyer</span></span><span class="review-ticker-separator">•</span>
+      <span class="review-ticker-item"><span class="stars">★★★★★</span> “Simple, smart and space-saving.” <span class="who">Alison · Verified buyer</span></span><span class="review-ticker-separator">•</span>
+      <span class="review-ticker-item"><span class="stars">★★★★★</span> “Great and easy solution. Game changer!” <span class="who">Adi · Verified buyer</span></span><span class="review-ticker-separator">•</span>
+      <span class="review-ticker-item"><span class="stars">★★★★★</span> “Love having compost in the trash drawer and not on my counter.” <span class="who">Michelle · Verified buyer</span></span><span class="review-ticker-separator">•</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section class="section" id="shop" data-screen-label="Shop bundles">
+  <div class="wrap">
+    <p class="eyebrow center">Pick your start</p>
+    <h2 class="center">Two ways to sort. Same patented divider.</h2>
+    <p class="lead center" style="margin:0 auto">Both bundles are the same clip. The only difference is the bags and labels you start with. Pick by what you sort most. You can switch any time.</p>
+    <div class="prod-grid">
+      <div class="card">
+        <img src="https://cdn.shopify.com/s/files/1/0724/2717/5978/files/firstpic2.jpg?v=1781143328" alt="Eco-Sorter Compost Bundle">
+        <div class="pad"><div class="ttl">Eco-Sorter Bundle — Compost</div><div class="rate"><span class="stars">★★★★★</span> 4.9</div><div class="price">$23.99</div><button class="btn btn-primary" type="button" data-add-to-cart data-title="Eco-Sorter Bundle — Compost" data-price="23.99">Add to cart</button></div>
+      </div>
+      <div class="card">
+        <img src="https://cdn.shopify.com/s/files/1/0724/2717/5978/files/recycle_cb91c1af-da25-432d-a3cb-a2dcb5b1cc2f.jpg?v=1781143329" alt="Recycle Bundle">
+        <div class="pad"><div class="ttl">Recycle Bundle</div><div class="rate"><span class="stars">★★★★★</span> 4.9</div><div class="price">$23.99</div><button class="btn btn-primary" type="button" data-add-to-cart data-title="Recycle Bundle" data-price="23.99">Add to cart</button></div>
+      </div>
+      <div class="card">
+        <img src="https://cdn.shopify.com/s/files/1/0724/2717/5978/files/firstpic2_3cb7f9ed-6393-43ae-a761-be13191082da.jpg?v=1781200203" alt="Whole-Home Set">
+        <div class="pad"><div class="ttl">Whole-Home Set — Compost, Trash &amp; Recycling</div><div class="rate"><span class="stars">★★★★★</span> 4.9</div><div class="price">$36.99 <span class="was">$63.97</span></div><button class="btn btn-primary" type="button" data-add-to-cart data-title="Whole-Home Set — Compost, Trash &amp; Recycling" data-price="36.99">Add to cart</button></div>
+      </div>
+      <div class="card">
+        <img src="https://cdn.shopify.com/s/files/1/0724/2717/5978/files/ESBundle1.jpg?v=1781200202" alt="Compostable Bag Refill 50 Pack">
+        <div class="pad"><div class="ttl">Compostable Bag Refill — 50 Pack</div><div class="rate">Subscribe &amp; save 10%</div><div class="price">$12.99</div><button class="btn btn-primary" type="button" data-add-to-cart data-title="Compostable Bag Refill — 50 Pack" data-price="12.99">Add to cart</button></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -448,33 +492,6 @@
       <span class="quote-chip">"exactly what I needed"</span>
       <span class="quote-chip">"great and easy solution"</span>
       <span class="quote-chip">"game changer"</span>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PRODUCTS ============ -->
-<section class="section" id="shop" data-screen-label="Shop bundles">
-  <div class="wrap">
-    <p class="eyebrow center">Pick your start</p>
-    <h2 class="center">Two ways to sort. Same patented divider.</h2>
-    <p class="lead center" style="margin:0 auto">Both bundles are the same clip. The only difference is the bags and labels you start with. Pick by what you sort most. You can switch any time.</p>
-    <div class="prod-grid">
-      <div class="card">
-        <img src="https://cdn.shopify.com/s/files/1/0724/2717/5978/files/firstpic2.jpg?v=1781143328" alt="Eco-Sorter Compost Bundle">
-        <div class="pad"><div class="ttl">Eco-Sorter Bundle — Compost</div><div class="rate"><span class="stars">★★★★★</span> 4.9</div><div class="price">$23.99</div><button class="btn btn-primary" type="button" data-add-to-cart data-title="Eco-Sorter Bundle — Compost" data-price="23.99">Add to cart</button></div>
-      </div>
-      <div class="card">
-        <img src="https://cdn.shopify.com/s/files/1/0724/2717/5978/files/recycle_cb91c1af-da25-432d-a3cb-a2dcb5b1cc2f.jpg?v=1781143329" alt="Recycle Bundle">
-        <div class="pad"><div class="ttl">Recycle Bundle</div><div class="rate"><span class="stars">★★★★★</span> 4.9</div><div class="price">$23.99</div><button class="btn btn-primary" type="button" data-add-to-cart data-title="Recycle Bundle" data-price="23.99">Add to cart</button></div>
-      </div>
-      <div class="card">
-        <img src="https://cdn.shopify.com/s/files/1/0724/2717/5978/files/firstpic2_3cb7f9ed-6393-43ae-a761-be13191082da.jpg?v=1781200203" alt="Whole-Home Set">
-        <div class="pad"><div class="ttl">Whole-Home Set — Compost, Trash & Recycling</div><div class="rate"><span class="stars">★★★★★</span> 4.9</div><div class="price">$36.99 <span class="was">$63.97</span></div><button class="btn btn-primary" type="button" data-add-to-cart data-title="Whole-Home Set — Compost, Trash & Recycling" data-price="36.99">Add to cart</button></div>
-      </div>
-      <div class="card">
-        <img src="https://cdn.shopify.com/s/files/1/0724/2717/5978/files/ESBundle1.jpg?v=1781200202" alt="Compostable Bag Refill 50 Pack">
-        <div class="pad"><div class="ttl">Compostable Bag Refill — 50 Pack</div><div class="rate">Subscribe &amp; save 10%</div><div class="price">$12.99</div><button class="btn btn-primary" type="button" data-add-to-cart data-title="Compostable Bag Refill — 50 Pack" data-price="12.99">Add to cart</button></div>
-      </div>
     </div>
   </div>
 </section>
