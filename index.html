@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" href="data:,">
 <style data-omelette-injected>html,body{background:transparent}</style><script data-omelette-injected>(()=>{var j=["https://claude.ai","https://preview.claude.ai","https://5457c1d9-b446-42f0-a09d-69bca9b49765.claudeusercontent.com"];var x=true;var S=30000;var f=3000;document.addEventListener("DOMContentLoaded",()=>{const H=window.Babel;const G="om-src-id";if(H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[G])){H.registerPlugin(G,({types:Y})=>({visitor:{JSXOpeningElement(U,Q){const J=U.node;if(J.name&&J.name.type==="JSXMemberExpression")return;for(let V=0;V<J.attributes.length;V++){const L=J.attributes[V];if(L.type==="JSXAttribute"&&L.name&&L.name.name==="data-om-id")return}const W=Q.file&&Q.file.opts&&Q.file.opts.filename||"?";const Z=J.loc&&J.loc.start;const z=`jsx:${W}:${J.start??0}:${Z?Z.line:0}:${Z?Z.column+1:0}`;J.attributes.push(Y.jsxAttribute(Y.jsxIdentifier("data-om-id"),Y.stringLiteral(z)))}}}))}const k="om-text-extract";let A=false;if(x&&H&&H.registerPlugin&&!(H.availablePlugins&&H.availablePlugins[k])){const Y=window.React;if(Y&&Y.useSyncExternalStore&&Y.createElement){A=true;const U={};const Q=new Set;let J=0;window.__omTextO=U;window.__omTextSet=(z)=>{for(const V in z){const L=z[V];if(L==null)delete U[V];else U[V]=L}J++;Q.forEach((V)=>V())};const W=(z)=>{Q.add(z);return()=>Q.delete(z)};const Z=()=>J;window.__OmT=function z(V){Y.useSyncExternalStore(W,Z,Z);return Y.createElement("span",{"data-om-text":V.i,className:"__om-t"},V.i in U?U[V.i]:V.children)};H.registerPlugin(k,({types:z})=>{const V={style:1,script:1,noscript:1,textarea:1,title:1,option:1,text:1,tspan:1,textPath:1};const L={placeholder:1,alt:1,title:1,label:1,"aria-label":1,"aria-description":1,"aria-placeholder":1};const _=($,C)=>z.logicalExpression("??",z.memberExpression(z.logicalExpression("||",z.memberExpression(z.identifier("window"),z.identifier("__omTextO")),z.objectExpression([])),z.stringLiteral($),true),C);const E=($)=>$.file&&$.file.opts&&$.file.opts.filename||"?";const B=($)=>$.file&&$.file.code||"";const b=($,C)=>{const X=(F)=>F&&F.start!=null&&F.end!=null&&(F.type==="StringLiteral"||F.type==="TemplateLiteral"&&F.expressions.length===0)?[F.start,F.end]:null;const N=X(C);if(N)return N;if(C&&C.type==="Identifier"){const F=$.scope.getBinding(C.name);if(F&&F.constant&&F.path.node.type==="VariableDeclarator"){return X(F.path.node.init)}}return null};const M=($,C,X)=>{const N=$.node;let F=false;const w=(K,q)=>{F=true;return z.jsxElement(z.jsxOpeningElement(z.jsxIdentifier("__OmT"),[z.jsxAttribute(z.jsxIdentifier("i"),z.stringLiteral(K))],false),z.jsxClosingElement(z.jsxIdentifier("__OmT")),[q],false)};const D=N.children.map((K)=>{if(K.type==="JSXText"){if(K.start==null||K.end==null)return K;const q=X.slice(K.start,K.end);const R=q.length-q.trimStart().length;const m=q.length-q.trimEnd().length;if(R+m>=q.length)return K;return w(`txt:${C}:${K.start+R}:${K.end-m}`,K)}if(K.type==="JSXExpressionContainer"){const q=b($,K.expression);if(q)return w(`str:${C}:${q[0]}:${q[1]}`,K)}return K});if(F)N.children=D};return{visitor:{JSXOpeningElement($,C){const X=$.node;const N=E(C);const F={};for(let w=0;w<X.attributes.length;w++){const D=X.attributes[w];if(D.type!=="JSXAttribute"||!D.name)continue;const K=D.name.name;if(!L[K])continue;if(!D.value||D.value.type!=="StringLiteral")continue;if(D.value.start==null||D.value.end==null)continue;const q=`txt:${N}:${D.value.start}:${D.value.end}`;F[K]=q;D.value=z.jsxExpressionContainer(_(q,z.stringLiteral(D.value.value)))}if(Object.keys(F).length){X.attributes.push(z.jsxAttribute(z.jsxIdentifier("data-om-text-attrs"),z.stringLiteral(JSON.stringify(F))))}},JSXElement($,C){const X=$.node.openingElement;const N=X&&X.name&&X.name.name;if(N==="__OmT")return;if(typeof N==="string"&&V[N])return;M($,E(C),B(C))},JSXFragment($,C){M($,E(C),B(C))}}}})}}const u=A?["transform-react-jsx-source",G,k]:["transform-react-jsx-source",G];document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach((Y,U)=>{const Q=Y.getAttribute("data-plugins")||"";const J=u.filter((W)=>Q.indexOf(W)<0);if(J.length){Y.setAttribute("data-plugins",Q?`${Q},${J.join(",")}`:J.join(","))}if(!Y.hasAttribute("data-filename")){Y.setAttribute("data-filename",Y.getAttribute("src")||`inline-${U}`)}})});var y=window.parent;if(y&&y!==window){const H=(Q,J)=>{try{y.postMessage({__omelette_log:true,type:Q,data:J},"*")}catch{}};["log","warn","error"].forEach((Q)=>{const J=console[Q];console[Q]=(...W)=>{const Z=W.map((z)=>{try{return typeof z==="object"?JSON.stringify(z):String(z)}catch{try{return String(z)}catch{return"[unstringifiable]"}}}).join(" ");H(Q,Z);J.apply(console,W)}});window.addEventListener("error",(Q)=>{const J=Q.target;if(J&&J!==window&&J.tagName){const W=J.src||J.href||"";H("resource_error",`${J.tagName} failed to load: ${W}`)}else{H("error",`${Q.message||"Unknown error"} at ${Q.filename||"?"}:${Q.lineno||0}:${Q.colno||0}`)}},true);window.addEventListener("unhandledrejection",(Q)=>{const J=Q.reason;const W=J instanceof Error?`${J.message} ${J.stack}`:String(J);H("error",`Unhandled rejection: ${W}`)});const G=()=>{try{y.postMessage({type:"omelette:height",height:document.documentElement.scrollHeight},"*")}catch{}};if(document.readyState==="complete")G();else window.addEventListener("load",G);if(window.ResizeObserver)new ResizeObserver(G).observe(document.documentElement);const k={};let A=0;window.claude={complete(Q){return new Promise((J,W)=>{if(!j.length){W(new Error("claude.complete: no parent origin"));return}const Z=`c${++A}`;const z=()=>setTimeout(()=>{delete k[Z];W(new Error(`claude.complete: no data for ${S/1000}s`))},S);const V=z();k[Z]={resolve:J,reject:W,text:"",t:V,arm:z};try{for(const L of j){y.postMessage({__om_api:true,id:Z,body:Q},L)}}catch(L){clearTimeout(V);delete k[Z];W(L)}})}};const u={};let Y=0;window.omelette={writeFile:(Q,J)=>new Promise((W,Z)=>{if(!j.length){W();return}const z=`f${++Y}`;const V=setTimeout(()=>{delete u[z];W()},f);u[z]={resolve:W,reject:Z,t:V};try{for(const L of j){y.postMessage({__om_file:true,id:z,op:"write",path:Q,content:J},L)}}catch{clearTimeout(V);delete u[z];W()}})};const U=(Q)=>{try{return JSON.stringify(Q)}catch{return JSON.stringify(String(Q))}};window.addEventListener("message",(Q)=>{if(j.indexOf(Q.origin)<0)return;if(Q.source!==y)return;const J=Q.data;if(!J)return;if(J.type==="omelette-preview-refresh"){if(typeof J.token!=="string"||!/^[0-9a-f.-]+(\.(rc|pr-[0-9]+))?(\.[0-9]+\.[0-9a-f]{16})?$/.test(J.token))return;const z=Math.max(1,Math.floor((J.expiresAt||0)-Date.now()/1000));document.cookie="__Host-omelette-preview="+J.token+"; Path=/; Secure; SameSite=None; Partitioned; Max-Age="+z;return}if(J.__om_file_r){const z=u[J.id];if(!z)return;clearTimeout(z.t);delete u[J.id];if(J.ok)z.resolve();else z.reject(new Error(J.error||"write failed"));return}if(J.__om_api_r){const z=k[J.id];if(!z)return;if(J.error!=null){clearTimeout(z.t);delete k[J.id];z.reject(new Error(J.error));return}if(J.chunk!=null){clearTimeout(z.t);z.t=z.arm();z.text+=J.chunk;return}if(J.done){clearTimeout(z.t);delete k[J.id];z.resolve(J.text!=null?J.text:z.text);return}return}if(!J.__om_eval)return;const W=J;const Z=(z)=>{Q.source.postMessage({...z,__om_eval_r:1,id:W.id},Q.origin)};try{const z=(0,eval)(W.code);if(z&&typeof z.then==="function"){z.then((V)=>Z({ok:1,v:U(V)}),(V)=>Z({ok:0,e:String(V)}))}else{Z({ok:1,v:U(z)})}}catch(z){Z({ok:0,e:String(z)})}})}})();
 </script>
 
@@ -118,6 +119,11 @@
   .stat .n { font-size: 30px; font-weight: 800; color: var(--forest); }
   .stat .l { font-size: 15px; color: var(--muted); font-weight: 600; }
   .strip .cap { text-align: center; margin-top: 26px; font-size: 13px; letter-spacing: .04em; color: var(--muted); text-transform: uppercase; font-weight: 600; }
+  /* ---- sorting uses ---- */
+  .uses { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-top: 34px; }
+  .use { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-card); padding: 24px; }
+  .use .num { display: grid; width: 42px; height: 42px; margin-bottom: 16px; place-items: center; border-radius: 12px; background: var(--sand); color: var(--forest); font-weight: 800; }
+  .use p { margin: 0; color: var(--muted); font-size: 15px; }
   /* ---- video ---- */
   .video-box { position: relative; overflow: hidden; max-width: 900px; margin-left: auto; margin-right: auto; background: #11231a; color: #e8e4d8; border-radius: var(--r-card); aspect-ratio: 4/3; }
   .video-box video { width: 100%; height: 100%; object-fit: cover; }
@@ -195,8 +201,8 @@
   .bar-row { display: grid; grid-template-columns: 42px 1fr 36px; gap: 12px; align-items: center; margin-bottom: 9px; font-size: 14px; font-weight: 600; }
   .bar { height: 9px; border-radius: 20px; background: #e4ddcd; overflow: hidden; }
   .bar > i { display: block; height: 100%; background: var(--forest); border-radius: 20px; }
-  .rev-cards { display: grid; gap: 16px; }
-  .rev-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-card); padding: 22px; }
+  .rev-cards { display: flex; gap: 16px; overflow-x: auto; padding: 3px 2px 12px; scroll-snap-type: x proximity; }
+  .rev-card { flex: 0 0 min(380px,82vw); background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-card); padding: 22px; scroll-snap-align: start; }
   .rev-card .who { font-size: 13px; color: var(--muted); font-weight: 700; margin-top: 10px; }
   /* ---- comparison ---- */
   .cmp { background: var(--sand); }
@@ -206,7 +212,7 @@
   .rrow .lab { font-weight: 700; }
   .rrow .sub { font-size: 14px; color: var(--muted); font-weight: 500; }
   .rrow .p { font-weight: 800; font-size: 19px; white-space: nowrap; }
-  .cmp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 40px; }
+  .cmp-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 20px; margin-top: 40px; }
   .cmp-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-card); padding: 24px; }
   .cmp-card.win { border-color: var(--forest); box-shadow: 0 0 0 1.5px var(--forest); }
   .cmp-card .badge { display: inline-block; background: var(--forest); color: #fff; font-size: 12px; font-weight: 700; padding: 4px 11px; border-radius: 40px; margin-bottom: 10px; letter-spacing: .04em; }
@@ -242,7 +248,7 @@
   /* ---- responsive ---- */
   @media (max-width: 900px) {
     .hero-grid, .founder-grid, .rev-grid, .faq-grid, .how-reference-grid { grid-template-columns: 1fr; gap: 30px; }
-    .stats { grid-template-columns: repeat(2,1fr); gap: 22px; }
+    .stats, .uses { grid-template-columns: repeat(2,1fr); gap: 22px; }
     .steps, .prob-grid, .prod-grid, .obj-grid, .cmp-grid, .use-demo-grid { grid-template-columns: 1fr; }
     .nav { grid-template-columns: 1fr auto 1fr; gap: 10px; }
     .nav-left, .nav-right .faq-link { display: none; }
@@ -308,23 +314,25 @@
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">The original trash can divider</p>
-      <div class="hero-rating"><span class="stars">★★★★★</span> 4.9 from 63 reviews</div>
-      <h1>Turn one trash can into two.</h1>
-      <p class="lead">The adjustable Eco-Sorter spans the trash can you already own and holds two bags side by side. Separate trash, recycling, compost, cans, or bottles without adding a second bin.</p>
+      <div class="hero-rating"><span class="stars">★★★★★</span> <strong>4.8</strong> from 60+ verified reviews on Etsy and 1thinggreen.com</div>
+      <h1>One can. Two compartments. Zero extra space.</h1>
+      <p class="lead">The patented Eco-Sorter divides the trash can you already own, each side with its own bag. Sort recycling, compost, bottles and cans, whatever your household separates, without a second bin.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="#shop">Shop the bundles</a>
+        <a class="btn btn-primary" href="#shop">Shop Eco-Sorter · $23.99</a>
         <a class="btn btn-ghost" href="#how">See how it works</a>
       </div>
       <div class="hero-trust">
-        <span class="pill">Patented design</span>
-        <span class="pill">Fits 8 to 13 inch cans</span>
-        <span class="pill">30-day money-back</span>
+        <span class="pill">Patented</span>
+        <span class="pill">Fits most cans 8 to 13 in wide</span>
+        <span class="pill">Made in California</span>
+        <span class="pill">30-day guarantee</span>
       </div>
       <p class="founder-note">A mother-and-son shop. Invented, patented, and packed in the USA.</p>
     </div>
     <div class="hero-media">
-      <video autoplay muted loop playsinline preload="metadata" poster="eco-sorter-installation-poster.png" aria-label="Test animation showing both bags installed first, followed by placing, extending, and tightening the Eco-Sorter">
-        <source src="eco-sorter-installation.mp4" type="video/mp4">
+      <video autoplay muted loop playsinline preload="metadata" poster="eco-sorter-full-setup-poster.jpg" aria-label="Two bags are fitted inside one trash can before the Eco-Sorter is placed and tightened across the rim">
+        <source src="eco-sorter-full-setup.webm" type="video/webm">
+        <source src="eco-sorter-full-setup.mp4" type="video/mp4">
       </video>
       <div class="hero-badge">Test preview. One can, two bags.</div>
     </div>
@@ -337,10 +345,24 @@
     <div class="stats">
       <div class="stat"><div class="n">Patented</div><div class="l">design</div></div>
       <div class="stat"><div class="n">5,000+</div><div class="l">cans divided</div></div>
-      <div class="stat"><div class="n">4.9 ★</div><div class="l">63 reviews</div></div>
+      <div class="stat"><div class="n">4.8 ★</div><div class="l">60+ verified reviews</div></div>
       <div class="stat"><div class="n">Made in USA</div><div class="l">from recycled plastic</div></div>
     </div>
     <p class="cap">The original trash can divider · U.S. Patent No. 12,275,582</p>
+  </div>
+</section>
+
+<!-- ============ SORTING USES ============ -->
+<section class="section" data-screen-label="Sorting uses">
+  <div class="wrap">
+    <p class="eyebrow center">One divider, many jobs</p>
+    <h2 class="center">What will you sort?</h2>
+    <div class="uses">
+      <article class="use"><span class="num">1</span><h3>Recycling</h3><p>Trash and recycling or 2 types of recycling in one kitchen can. The most popular setup.</p></article>
+      <article class="use"><span class="num">2</span><h3>Compost</h3><p>Food scraps go straight in the can, not in a pail on your counter. No mess, no extra footprint, easy collection.</p></article>
+      <article class="use"><span class="num">3</span><h3>Bottles &amp; cans</h3><p>Keep CRV and deposit containers separate and clean, ready to redeem. A favorite for garages and break rooms.</p></article>
+      <article class="use"><span class="num">4</span><h3>Anything else</h3><p>Paper in the office, plastic in the bathroom, aluminum cans in the garage. Just use one bin to separate from trash.</p></article>
+    </div>
   </div>
 </section>
 
@@ -348,10 +370,11 @@
 <section class="section" id="how" data-screen-label="How it works">
   <div class="wrap">
     <p class="eyebrow center">How it works</p>
-    <h2 class="center">One can. Two bags. One adjustable divider.</h2>
+    <h2 class="center">Set up in seconds</h2>
     <figure class="installation-demo">
-      <video autoplay muted loop playsinline preload="metadata" poster="eco-sorter-installation-poster.png" aria-label="Step-by-step Eco-Sorter installation animation">
-        <source src="eco-sorter-installation.mp4" type="video/mp4">
+      <video autoplay muted loop playsinline preload="metadata" poster="eco-sorter-full-setup-poster.jpg" aria-label="Step-by-step Eco-Sorter installation animation">
+        <source src="eco-sorter-full-setup.webm" type="video/webm">
+        <source src="eco-sorter-full-setup.mp4" type="video/mp4">
       </video>
       <figcaption><strong>Install in the right order</strong><span>Bag both sides, place on the rim, extend to fit, then tighten the round clasp.</span></figcaption>
     </figure>
@@ -398,9 +421,9 @@
 <section class="section" data-screen-label="Steps">
   <div class="wrap">
     <div class="steps">
-      <div class="step"><div class="num">1</div><h3>Bag both sides</h3><p>Fit one liner on each side of your existing trash can.</p></div>
-      <div class="step"><div class="num">2</div><h3>Set the divider</h3><p>Place the single Eco-Sorter bar across the rim after both bags are in place.</p></div>
-      <div class="step"><div class="num">3</div><h3>Tighten to fit</h3><p>Adjust the width and tighten the round clasp until the end clips grip the rim.</p></div>
+      <div class="step"><div class="num">1</div><h3>Bag both sides</h3><p>Line your can with two bags. The divider secures the bags, creating dual compartments in one can.</p></div>
+      <div class="step"><div class="num">2</div><h3>Adjust to fit</h3><p>The divider attaches to the rim of your can and adjusts to fit. No tools, no assembly.</p></div>
+      <div class="step"><div class="num">3</div><h3>Sort as you go</h3><p>Toss items in the appropriate sides. When a bag is full, lift it out and swap it. A simple routine.</p></div>
     </div>
     <div class="center mt"><a class="btn btn-primary" href="#shop">Shop the bundles</a></div>
   </div>
@@ -409,16 +432,16 @@
 <!-- ============ PROBLEM ============ -->
 <section class="prob section" data-screen-label="Problem">
   <div class="wrap">
-    <p class="eyebrow center">The two-bin problem</p>
-    <h2 class="center">You needed two bins. You didn't want two cans.</h2>
+    <p class="eyebrow center">Old way vs. new way</p>
+    <h2 class="center">Sorting shouldn't cost you floor or counter space</h2>
     <div class="prob-grid">
       <div class="prob-card">
         <div class="ph">[ photo to shoot: a second bin or caddy crowding the kitchen floor or counter ]</div>
-        <div class="prob-body"><p class="eyebrow">The old way</p><div class="lab">A second can in the way</div><p>A separate bin or caddy eating floor and counter space. One more thing to bump into, empty, and clean.</p></div>
+        <div class="prob-body"><p class="eyebrow">The old way</p><div class="lab">Extra containers, extra clutter</div><p>A compost pail collecting old food on the counter. A second bin squeezed somewhere it doesn't fit. Or no sorting at all, because it's too much hassle.</p></div>
       </div>
       <div class="prob-card win">
         <img src="eco-sorter-one-can.jpg" alt="The real Eco-Sorter dividing one gray trash can into two bag compartments">
-        <div class="prob-body"><p class="eyebrow">The divider</p><div class="lab">Across the can you own</div><p>The adjustable bar spans the rim and holds two bags side by side. Two streams, zero extra footprint.</p></div>
+        <div class="prob-body"><p class="eyebrow">With the Eco-Sorter</p><div class="lab">Everything hides in one can</div><p>Everything hides inside the can you already own. Two separate, bagged compartments, each emptied on its own schedule. Counter and floor space stay clear and uncluttered.</p></div>
       </div>
     </div>
     <div class="quotes">
@@ -483,10 +506,10 @@
     <div class="ph">Photo: Ryan and Jill — in their workspace</div>
     <div>
       <p class="eyebrow">Our story</p>
-      <blockquote>"You should Shark Tank this."</blockquote>
-      <p>We're Ryan and Jill, a son and his mother. We hit the same two-bin problem you did, so we invented the clip, patented it, and we make it in the USA from recycled plastic. Jill runs the shop and packs every order herself.</p>
-      <p>That's the whole company. A mother and son, a real patent, and one simple thing that works.</p>
-      <div class="sig">Made by Ryan and Jill</div>
+      <blockquote>Invented by a mom and her son in Walnut Creek, California</blockquote>
+      <p>Ryan wanted to compost at home. Jill didn't want a bin of food scraps on the counter. So they bought a 3D printer and made countless prototypes until they had something that actually worked. Right in the garbage can.</p>
+      <p>Today it's patented, made from recycled plastic, manufactured in California, and still packed by Jill herself.</p>
+      <div class="sig">Read the full story</div>
     </div>
   </div>
 </section>
@@ -494,51 +517,60 @@
 <!-- ============ REVIEWS ============ -->
 <section class="section" id="reviews" data-screen-label="Reviews">
   <div class="wrap">
-    <h2 class="center">What buyers say</h2>
+    <p class="eyebrow center">Reviews</p>
+    <h2 class="center">Customers say it best</h2>
     <div class="rev-grid">
       <div>
-        <div class="rev-score">4.9</div>
-        <div style="margin:6px 0 18px"><span class="stars">★★★★★</span> · 63 reviews</div>
-        <p style="max-width:30ch;color:var(--muted)">The current live total, updated from the existing customer review library.</p>
+        <div class="rev-score">4.8</div>
+        <div style="margin:6px 0 18px"><span class="stars">★★★★★</span> · 60+ verified reviews</div>
       </div>
-      <div class="rev-cards">
-        <div class="rev-card"><div class="stars">★★★★★</div><p style="margin:8px 0 0">Works well, love being able to have compost in the trash drawer and not on my counter. Thank you.</p><div class="who">Verified buyer</div></div>
-        <div class="rev-card"><div class="stars">★★★★★</div><p style="margin:8px 0 0">Great and easy solution to a frustrating problem. Game changer! Thanks!!</p><div class="who">Verified buyer</div></div>
-        <div class="rev-card"><div class="stars">★★★★★</div><p style="margin:8px 0 0">We live in NYC where composting just became a requirement. This was exactly what I was looking for. So glad I found it!</p><div class="who">Verified buyer</div></div>
+      <div aria-label="Star distribution: mostly 5 star reviews">
+        <div class="bar-row"><span>5 ★</span><span class="bar"><i style="width:90%"></i></span><span>90%</span></div>
+        <div class="bar-row"><span>4 ★</span><span class="bar"><i style="width:5%"></i></span><span>5%</span></div>
+        <div class="bar-row"><span>3 ★</span><span class="bar"><i style="width:2%"></i></span><span>2%</span></div>
+        <div class="bar-row"><span>2 ★</span><span class="bar"><i style="width:0%"></i></span><span>0%</span></div>
+        <div class="bar-row"><span>1 ★</span><span class="bar"><i style="width:2%"></i></span><span>2%</span></div>
       </div>
     </div>
-    <div class="center" style="margin-top:28px"><a class="btn btn-ghost" href="reviews.html">Read all 63 reviews</a></div>
+    <div class="rev-cards">
+      <div class="rev-card"><div class="stars">★★★★★</div><p>"It's astonishing how much of a hole in the market there is for exactly this kind of device. Well done!"</p><div class="who">Ian · Verified buyer</div></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p>"I'm very happy to get rid of our countertop compost bin and use this instead. We've changed bags a couple of times now and it's very easy to use. So glad I found this!"</p><div class="who">Barbara · Verified buyer</div></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p>"Simple, smart and space-saving design. We're able to separate compost, garbage and recycling without taking up space for a third bin. Highly recommend."</p><div class="who">Alison · Verified buyer</div></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p>"Such a simple concept but exactly what I needed to keep plastic overwrap and shopping bags separate from the cans, bottles and plastic recyclables."</p><div class="who">P.D. · Verified buyer</div></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p>"Great and easy solution to a frustrating problem. Game changer! Thanks!!"</p><div class="who">Adi · Verified buyer</div></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p>"Works well. Love being able to have compost in the trash drawer and not on my counter."</p><div class="who">Michelle · Verified buyer</div></div>
+    </div>
+    <div class="center" style="margin-top:28px"><a class="btn btn-ghost" href="reviews.html">Read all reviews</a></div>
   </div>
 </section>
 
 <!-- ============ COMPARISON ============ -->
 <section class="cmp section" data-screen-label="Comparison">
   <div class="wrap">
-    <p class="eyebrow center">The math</p>
-    <h2 class="center">Cheaper than buying a second can.</h2>
-    <div class="reframe">
-      <div class="rrow"><div><div class="lab">A second kitchen trash can</div></div><div class="p">$40-80</div></div>
-      <div class="rrow"><div><div class="lab">Caddies, bins, or an electric composter</div></div><div class="p">$30-400</div></div>
-      <div class="rrow win"><div><div class="lab">The trash can divider</div><div class="sub">and it uses the can you already own</div></div><div class="p">$23.99</div></div>
-    </div>
-    <h3 class="center" style="margin-top:46px">What you'd buy instead</h3>
-    <p class="center" style="color:var(--muted)">The three ways people solve the two-bin problem, side by side.</p>
+    <p class="eyebrow center">Compare</p>
+    <h2 class="center">The affordable way to sort at home</h2>
+    <p class="center" style="color:var(--muted)">Other options cost more, take more space, or both.</p>
     <div class="cmp-grid">
       <div class="cmp-card win">
-        <span class="badge">The divider</span>
-        <div class="ct">1ThingGreen divider</div>
+        <span class="badge">Best fit</span>
+        <div class="ct">Eco-Sorter</div>
         <div class="cp">$23.99</div>
-        <dl><dt>Counter and floor space</dt><dd>None. It hides inside the can you own.</dd><dt>Smell</dt><dd>Same as your can. The lid keeps it down.</dd><dt>Cleanup</dt><dd>Wipe the clip when you swap bags.</dd><dt>Where it lives</dt><dd>Inside your existing can.</dd></dl>
+        <dl><dt>Extra space needed</dt><dd>None, hides in your can</dd><dt>Works with your current can</dt><dd>Yes, most cans 8 to 13 in wide</dd><dt>Cleanup</dt><dd>Swap bags, wipe the divider</dd><dt>Hidden from view</dt><dd>Yes, invisible inside your standard can</dd></dl>
       </div>
       <div class="cmp-card">
         <div class="ct">A second trash can</div>
-        <div class="cp">$40-80</div>
-        <dl><dt>Counter and floor space</dt><dd>A second footprint on your floor.</dd><dt>Smell</dt><dd>Same as any can.</dd><dt>Cleanup</dt><dd>One more can to empty and wash.</dd><dt>Where it lives</dt><dd>Wherever you can squeeze it in.</dd></dl>
+        <div class="cp">$40 to $80</div>
+        <dl><dt>Extra space needed</dt><dd>A second floor footprint</dd><dt>Works with your current can</dt><dd>No, it's another can</dd><dt>Cleanup</dt><dd>Empty and wash a whole extra can</dd><dt>Hidden from view</dt><dd>No, a second can in the room</dd></dl>
       </div>
       <div class="cmp-card">
-        <div class="ct">An electric countertop composter</div>
-        <div class="cp">$200-400</div>
-        <dl><dt>Counter and floor space</dt><dd>A permanent counter spot and an outlet.</dd><dt>Smell</dt><dd>Filtered, until the filter needs replacing.</dd><dt>Cleanup</dt><dd>A bucket and filters to maintain.</dd><dt>Where it lives</dt><dd>On your counter.</dd></dl>
+        <div class="ct">Dual-compartment can</div>
+        <div class="cp">$100 to $250</div>
+        <dl><dt>Extra space needed</dt><dd>Replaces your can, usually bigger</dd><dt>Works with your current can</dt><dd>No, full replacement</dd><dt>Cleanup</dt><dd>Empty and wash</dd><dt>Hidden from view</dt><dd>No, it's the biggest can in the kitchen</dd></dl>
+      </div>
+      <div class="cmp-card">
+        <div class="ct">Kitchen compost bin</div>
+        <div class="cp">$15 to $50</div>
+        <dl><dt>Extra space needed</dt><dd>Permanent spot on your counter</dd><dt>Works with your current can</dt><dd>No, an extra container to manage</dd><dt>Cleanup</dt><dd>Empty and scrub the pail, often</dd><dt>Hidden from view</dt><dd>No, it sits on your counter</dd></dl>
       </div>
     </div>
   </div>
@@ -570,15 +602,12 @@
   </div>
 </section>
 
-<!-- ============ EMAIL ============ -->
-<section class="email section" data-screen-label="Email signup">
+<!-- ============ FINAL CTA ============ -->
+<section class="email section" data-screen-label="Final call to action">
   <div class="wrap">
-    <h2>Get 10% off your first order.</h2>
-    <p>One email when there's something worth telling you. No spam, and you can leave any time.</p>
-    <form onsubmit="return false">
-      <input type="email" placeholder="you@email.com" aria-label="Email">
-      <button class="btn" type="submit">Get my 10%</button>
-    </form>
+    <h2>Give your trash can a second job</h2>
+    <p>Backed by a 30-day guarantee. If it doesn't fit your can or your routine, send it back.</p>
+    <a class="btn" href="#shop">Shop the Eco-Sorter</a>
   </div>
 </section>
 
