@@ -198,6 +198,7 @@
   .founder { background: var(--tan); }
   .founder-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 44px; align-items: center; }
   .founder .ph { border-radius: var(--r-card); aspect-ratio: 1/1; }
+  .founder .founder-photo { width: 100%; border-radius: var(--r-card); aspect-ratio: 1/1; object-fit: cover; display: block; }
   .founder blockquote { font-size: clamp(24px,2.6vw,34px); font-weight: 800; line-height: 1.18; margin: 0 0 18px; letter-spacing: -.02em; }
   .sig { font-weight: 700; margin-top: 14px; }
   /* ---- reviews ---- */
@@ -445,14 +446,14 @@
     </div>
     <div class="use-demo-grid">
       <figure class="use-demo-card">
-        <video autoplay muted loop playsinline preload="metadata" poster="eco-sorter-recycling.jpg" aria-label="AI-assisted test demonstration of a green bottle being placed in the blue recycling liner">
-          <source src="higgsfield-recycling-use.mp4" type="video/mp4">
+        <video autoplay muted loop playsinline preload="metadata" poster="1tg-use-recycling-poster.jpg" aria-label="AI-assisted demonstration of a green bottle being placed in the blue recycling liner">
+          <source src="1tg-use-recycling.mp4" type="video/mp4">
         </video>
         <figcaption><strong>Recycling side</strong>A bottle goes into the blue liner while the divider stays fixed.</figcaption>
       </figure>
       <figure class="use-demo-card">
-        <video autoplay muted loop playsinline preload="metadata" poster="eco-sorter-one-can.jpg" aria-label="AI-assisted test demonstration of a paper towel being placed in the white trash liner">
-          <source src="higgsfield-trash-use.mp4" type="video/mp4">
+        <video autoplay muted loop playsinline preload="metadata" poster="1tg-use-trash-poster.jpg" aria-label="AI-assisted demonstration of a paper towel being placed in the white trash liner">
+          <source src="1tg-use-trash.mp4" type="video/mp4">
         </video>
         <figcaption><strong>Trash side</strong>Everyday trash goes into the white liner without adding a second can.</figcaption>
       </figure>
@@ -480,7 +481,8 @@
     <h2 class="center">Sorting shouldn't cost you floor or counter space</h2>
     <div class="prob-grid">
       <div class="prob-card">
-        <div class="ph">[ photo to shoot: a second bin or caddy crowding the kitchen floor or counter ]</div>
+        <img src="1tg-oldway-photo.jpg" alt="The old way: a countertop compost pail and a second recycling bin crowding a small kitchen">
+
         <div class="prob-body"><p class="eyebrow">The old way</p><div class="lab">Extra containers, extra clutter</div><p>A compost pail collecting old food on the counter. A second bin squeezed somewhere it doesn't fit. Or no sorting at all, because it's too much hassle.</p></div>
       </div>
       <div class="prob-card win">
@@ -520,7 +522,8 @@
 <!-- ============ FOUNDER ============ -->
 <section class="founder section" id="story" data-screen-label="Founder story">
   <div class="wrap founder-grid">
-    <div class="ph">Photo: Ryan and Jill — in their workspace</div>
+    <img class="founder-photo" src="1tg-founder-square.jpg" alt="Jill and Ryan Collins, the mother-and-son founders of 1ThingGreen, in their kitchen">
+
     <div>
       <p class="eyebrow">Our story</p>
       <blockquote>Invented by a mom and her son in Walnut Creek, California</blockquote>
